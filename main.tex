@@ -1,0 +1,157 @@
+\documentclass[xcolor=dvipsnames, size=custom,width=120,height=90,scale=1.17]{beamer}
+\usepackage{tikz}
+
+\usetheme{Madrid}
+\useinnertheme{circles}
+
+
+% ====================
+% Colors
+% ====================
+
+\definecolor{rice_blue}{RGB}{0, 32, 91}
+\definecolor{rice_gray}{RGB}{124, 126, 127}
+
+\definecolor{maroon}{RGB}{128, 0, 0}
+\definecolor{darkgray}{RGB}{118, 118, 118}
+\definecolor{lightgray}{RGB}{214, 214, 206}
+\definecolor{yellow}{RGB}{248, 164, 41}
+\definecolor{orange}{RGB}{193, 102, 34}
+\definecolor{red}{RGB}{143, 57, 49}
+\definecolor{lightgreen}{RGB}{145, 171, 90}
+\definecolor{darkgreen}{RGB}{88, 89, 63}
+\definecolor{blue}{RGB}{21, 95, 131}
+\definecolor{violet}{RGB}{53, 14, 32}
+\setbeamercolor{palette primary}{bg=rice_blue,fg=white}
+\setbeamercolor{palette secondary}{bg=rice_blue,fg=white}
+\setbeamercolor{palette tertiary}{bg=rice_blue,fg=white}
+\setbeamercolor{palette quaternary}{bg=rice_blue,fg=white}
+\setbeamercolor{structure}{fg=rice_blue} % itemize, enumerate, etc
+\setbeamercolor{section in toc}{fg=rice_blue} % TOC sections
+\setbeamercolor{subsection in head/foot}{bg=rice_gray,fg=white}
+
+% ====================
+% Main
+% ====================
+
+\title[Abbreviated Title]{Full Title}
+\date{\today}
+
+
+\author[Kevin McCoy]{Kevin McCoy\inst{1,2}}
+
+\institute[Rice University]{\inst{1} Department of Statistics, Rice University \\ \inst{2} The University of Texas, MD Anderson Cancer Center}
+
+
+\begin{document}
+\addtobeamertemplate{headline}{}
+{
+    \begin{tikzpicture}[remember picture,overlay]
+      \node [anchor=north west, inner sep=3mm] at ([xshift=7mm,yshift=0.25mm]current page.north west)
+      {\includegraphics[height=6.0mm]{logos/rice_wordmark.eps}};
+      
+      \node [anchor=north west, inner sep=3mm] at ([xshift=0.0mm,yshift=0.25mm]current page.north west)
+      {\includegraphics[height=6.0mm]{logos/rice_shield.eps}};
+      
+      \node [anchor=north east, inner sep=3mm] at ([xshift=0.75mm,yshift=0.25mm]current page.north east)
+      {\includegraphics[height=6.0mm]{logos/mda.png}};
+    \end{tikzpicture}
+}
+
+%The next statement creates the title page.
+\frame{\titlepage}
+
+
+%---------------------------------------------------------
+%This block of code is for the table of contents after
+%the title page
+\begin{frame}
+\frametitle{Table of Contents}
+\tableofcontents
+\end{frame}
+%---------------------------------------------------------
+
+
+
+\section{First section}
+
+%---------------------------------------------------------
+%Changing visivility of the text
+\begin{frame}
+\frametitle{Sample frame title}
+This is a text in second frame. For the sake of showing an example.
+
+\begin{itemize}
+    \item<1-> Text visible on slide 1
+    \item<2-> Text visible on slide 2
+    \item<3> Text visible on slides 3
+    \item<4-> Text visible on slide 4
+\end{itemize}
+\end{frame}
+
+%---------------------------------------------------------
+
+
+%---------------------------------------------------------
+%Example of the \pause command
+\begin{frame}
+In this slide \pause
+
+the text will be partially visible \pause
+
+And finally everything will be there
+\end{frame}
+%---------------------------------------------------------
+
+\section{Second section}
+
+%---------------------------------------------------------
+%Highlighting text
+\begin{frame}
+\frametitle{Sample frame title}
+
+In this slide, some important text will be
+\alert{highlighted} because it's important.
+Please, don't abuse it.
+
+\begin{block}{Remark}
+Sample text
+\end{block}
+
+\begin{alertblock}{Important theorem}
+Sample text in red box
+\end{alertblock}
+
+\begin{examples}
+Sample text in green box. The title of the block is ``Examples".
+\end{examples}
+\end{frame}
+%---------------------------------------------------------
+
+
+%---------------------------------------------------------
+%Two columns
+\begin{frame}
+\frametitle{Two-column slide}
+
+\begin{columns}
+
+\column{0.5\textwidth}
+This is a text in first column.
+$$E=mc^2$$
+\begin{itemize}
+\item First item
+\item Second item
+\end{itemize}
+
+\column{0.5\textwidth}
+This text will be in the second column
+and on a second tought this is a nice looking
+layout in some cases.
+\end{columns}
+\end{frame}
+%---------------------------------------------------------
+
+
+
+\end{document}
